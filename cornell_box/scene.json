@@ -1,0 +1,129 @@
+{
+    "state": {
+        "path_tracing": {
+            "spp": 64,
+            "max_path_depth": 64
+        }
+    },
+    "camera": {
+        "type": "perspective",
+        "fov": 19.5,
+        "film": {
+            "resolution": [720, 720]
+        }
+    },
+    "lights": [
+        {
+            "type": "rect",
+            "position": [-0.24,1.98,-0.22],
+            "v1": [0.23,1.98,-0.22],
+            "v2": [-0.24,1.98,0.16],
+            "emittance": [17,12,4]
+        }
+    ],
+    "materials": [
+        {
+            "name": "LeftWall",
+            "type": "brdf_lambertian",
+            "diffuse_reflectance": [0.63,0.065,0.05]
+        },
+        {
+            "name": "RightWall",
+            "type": "brdf_lambertian",
+            "diffuse_reflectance": [0.14,0.45,0.091]
+        },
+        {
+            "name": "Floor",
+            "type": "brdf_lambertian",
+            "diffuse_reflectance": [0.725,0.71,0.68]
+        },
+        {
+            "name": "Ceiling",
+            "type": "brdf_lambertian",
+            "diffuse_reflectance": [0.725,0.71,0.68]
+        },
+        {
+            "name": "BackWall",
+            "type": "brdf_lambertian",
+            "diffuse_reflectance": [0.725,0.71,0.68]
+        },
+        {
+            "name": "ShortBox",
+            "type": "brdf_lambertian",
+            "diffuse_reflectance": [0.725,0.71,0.68]
+        },
+        {
+            "name": "TallBox",
+            "type": "brdf_lambertian",
+            "diffuse_reflectance": [0.725,0.71,0.68]
+        }
+    ],
+    "meshes": [
+        {
+            "name": "ceiling",
+            "path": "ceiling.obj"
+        },
+        {
+            "name": "floor",
+            "path": "floor.obj"
+        },
+        {
+            "name": "leftwall",
+            "path": "leftwall.obj"
+        },
+        {
+            "name": "rightwall",
+            "path": "rightwall.obj"
+        },
+        {
+            "name": "backwall",
+            "path": "backwall.obj"
+        },
+        {
+            "name": "shortbox",
+            "path": "shortbox.obj"
+        },
+        {
+            "name": "tallbox",
+            "path": "tallbox.obj"
+        }
+    ],
+    "instances": [
+        {
+            "mesh": "ceiling",
+            "material": "Ceiling"
+        },
+        {
+            "mesh": "floor",
+            "material": "Floor"
+        },
+        {
+            "mesh": "leftwall",
+            "material": "LeftWall"
+        },
+        {
+            "mesh": "rightwall",
+            "material": "RightWall"
+        },
+        {
+            "mesh": "backwall",
+            "material": "BackWall"
+        },
+        {
+            "mesh": "shortbox",
+            "material": "ShortBox"
+        },
+        {
+            "mesh": "tallbox",
+            "material": "TallBox"
+        }
+    ],
+    "shots": [
+        {
+            "type": "lookat",
+            "eye": [0,1,6.8],
+            "lookat": [0,1,0],
+            "up": [0, 1, 0]
+        }
+    ]
+}

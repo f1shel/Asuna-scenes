@@ -1,0 +1,218 @@
+{
+    "state": {
+        "path_tracing": {
+            "spp": 8192,
+            "max_path_depth": 5
+        },
+        "post_processing": {
+            "tone_mapping": "gamma"
+        }
+    },
+    "camera": {
+        "type": "perspective",
+        "fov": 60,
+        "film": {
+            "resolution": [1280, 720]
+        }
+    },
+
+    "textures": [
+        {
+            "name": "head_color",
+            "path": "textures/01_Head_Base_Color.png",
+            "gamma": 2.2
+        },
+        {
+            "name": "body_color",
+            "path": "textures/02_Body_Base_Color.png",
+            "gamma": 2.2
+        },
+        {
+            "name": "base_color",
+            "path": "textures/03_Base_Base_Color.png",
+            "gamma": 2.2
+        },
+        {
+            "name": "head_normal",
+            "path": "textures/01_Head_Normal_revert.png"
+        },
+        {
+            "name": "body_normal",
+            "path": "textures/02_Body_Normal_revert.png"
+        },
+        {
+            "name": "base_normal",
+            "path": "textures/03_Base_Normal_revert.png"
+        },
+        {
+            "name": "base_metallic",
+            "path": "textures/03_Base_MetallicRoughness_Metallic.png"
+        },
+        {
+            "name": "head_metallic",
+            "path": "textures/01_Head_Metallic.png"
+        },
+        {
+            "name": "body_metallic",
+            "path": "textures/02_Body_MetallicRoughness_Metallic.png"
+        },
+        {
+            "name": "base_roughness",
+            "path": "textures/03_Base_MetallicRoughness_Roughness.png"
+        },
+        {
+            "name": "head_roughness",
+            "path": "textures/01_Head_Roughness.png"
+        },
+        {
+            "name": "body_roughness",
+            "path": "textures/02_Body_MetallicRoughness_Roughness.png"
+        },
+        {
+            "name": "grid",
+            "path": "textures/grid.jpg",
+            "gamma": 2.2
+        }
+    ],
+    "materials": [
+        {
+            "name": "head",
+            "type": "brdf_pbr_metalness_roughness",
+            "diffuse_texture": "head_color",
+            "normal_texture": "head_normal",
+            "metalness_texture": "head_metallic",
+            "roughness_texture": "head_roughness"
+        },
+        {
+            "name": "body",
+            "type": "brdf_pbr_metalness_roughness",
+            "diffuse_texture": "body_color",
+            "normal_texture": "body_normal",
+            "metalness_texture": "body_metallic",
+            "roughness_texture": "body_roughness"
+        },
+        {
+            "name": "base",
+            "type": "brdf_pbr_metalness_roughness",
+            "diffuse_texture": "base_color",
+            "normal_texture": "base_normal",
+            "metalness_texture": "base_metallic",
+            "roughness_texture": "base_roughness"
+        },
+        {
+            "name": "grid",
+            "type": "brdf_pbr_metalness_roughness",
+            "diffuse_texture": "grid",
+            "roughness": 0.5,
+            "metalness": 0.0
+        }
+    ],
+    "meshes": [
+        {
+            "name": "head",
+            "path": "head.obj"
+        },
+        {
+            "name": "base",
+            "path": "base.obj"
+        },
+        {
+            "name": "body",
+            "path": "body.obj"
+        },
+        {
+            "name": "bg",
+            "path": "background.obj"
+        }
+    ],
+    "lights": [
+        {
+            "type": "rect",
+            "position": [-0.103555,0.284840,0.606827],
+            "v1": [-0.103555,0.465656,0.521355],
+            "v2": [0.096445,0.284840,0.606827],
+            "emittance":[ 41,40,40]
+        },
+        {
+            "type": "rect",
+            "position": [0.303145 ,0.461806, -0.450967],
+            "v1": [0.362568, 0.280251, -0.510182],
+            "v2": [0.447143, 0.461806, -0.306465],
+            "emittance":[ 40,40,41]
+        }
+    ],
+    "instances": [
+        {
+            "mesh": "bg",
+            "material": "grid"
+        },
+        {
+            "mesh": "head",
+            "material": "head",
+            "toworld": [
+                {
+                    "type": "translate",
+                    "value": [0.017,0.107,-0.05]
+                }
+            ]
+        },
+        {
+            "mesh": "body",
+            "material": "body",
+            "toworld": [
+                {
+                    "type": "translate",
+                    "value": [0,0.049,-0.05]
+                }
+            ]
+        },
+        {
+            "mesh": "base",
+            "material": "base",
+            "toworld": [
+                {
+                    "type": "translate",
+                    "value": [0,0.0075,-0.05]
+                }
+            ]
+        },
+        {
+            "mesh": "head",
+            "material": "head",
+            "toworld": [
+                {
+                    "type": "translate",
+                    "value": [0.017,0.107,0.05]
+                }
+            ]
+        },
+        {
+            "mesh": "body",
+            "material": "body",
+            "toworld": [
+                {
+                    "type": "translate",
+                    "value": [0,0.049,0.05]
+                }
+            ]
+        },
+        {
+            "mesh": "base",
+            "material": "base",
+            "toworld": [
+                {
+                    "type": "translate",
+                    "value": [0,0.0075,0.05]
+                }
+            ]
+        }
+    ],
+    "shots": [
+        {
+            "type": "lookat",
+            "eye": [0.292, 0.228, -0.104],
+            "lookat": [0.0, 0.07, 0.0],
+            "up": [0, 1, 0]
+        }
+    ]
+}

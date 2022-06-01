@@ -1,0 +1,138 @@
+{
+    "state": {
+        "path_tracing": {
+            "spp": 1,
+            "max_path_depth": 64,
+            "use_tone_mapping": false,
+            "use_face_normal": true,
+            "background_color": [
+                0.2313725490196078,
+                0.3607843137254902,
+                0.4313725490196078
+            ]
+        }
+    },
+    "camera": {
+        "type": "perspective",
+        "fov": 79.5,
+        "film": {
+            "resolution": [1400, 720]
+        }
+    },
+    "textures": [
+        {
+            "name": "cloth",
+            "path": "textures/Clothes_emissive.png"
+        },
+        {
+            "name": "fire",
+            "path": "textures/Fire_emissive.png"
+        },
+        {
+            "name": "hair",
+            "path": "textures/Hair_emissive.png"
+        },
+        {
+            "name": "skin",
+            "path": "textures/Skin_emissive.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "cloth",
+            "type": "brdf_emissive",
+            "diffuse_reflectance": [1.0, 1.0, 1.0],
+            "emittance_factor": [0.5, 0.5, 0.5],
+            "metalness": 0.0,
+            "roughness": 0.7550510257216823,
+            "emittance_texture": "cloth"
+        },
+        {
+            "name": "fire",
+            "type": "brdf_emissive",
+            "diffuse_reflectance": [1.0, 1.0, 1.0],
+            "emittance_factor": [1.0, 1.0, 1.0],
+            "emittance_texture": "fire",
+            "metalness": 0.0,
+            "roughness": 0.8967710651963394
+        },
+        {
+            "name": "skin",
+            "type": "brdf_emissive",
+            "diffuse_reflectance": [1.0, 0.723091, 0.557441],
+            "emittance_factor": [0.5, 0.5, 0.5],
+            "emittance_texture": "skin",
+            "metalness": 0.0,
+            "roughness": 0.8113888186708381
+        },
+        {
+            "name": "hair",
+            "type": "brdf_emissive",
+            "diffuse_reflectance": [0.65817, 0.05756610000000003, 0.11449399999999997],
+            "emittance_factor": [0.5, 0.5, 0.5],
+            "emittance_texture": "hair",
+            "metalness": 0.0,
+            "roughness": 0.9536153150072377
+        }
+    ],
+    "meshes": [
+        {
+            "name": "hair",
+            "path": "Hair.obj"
+        },
+        {
+            "name": "fire",
+            "path": "Fire.obj"
+        },
+        {
+            "name": "cloth3",
+            "path": "Cloth3.obj"
+        },
+        {
+            "name": "cloth4",
+            "path": "Cloth4.obj"
+        },
+        {
+            "name": "cloth5",
+            "path": "Cloth5.obj"
+        },
+        {
+            "name": "clothmetal",
+            "path": "Cloth_metal.obj"
+        },
+        {
+            "name": "skin",
+            "path": "Skin.obj"
+        }
+    ],
+    "instances": [
+        {
+            "mesh": "clothmetal",
+            "material": "cloth"
+        },
+        {
+            "mesh": "cloth3",
+            "material": "cloth"
+        },
+        {
+            "mesh": "cloth4",
+            "material": "cloth"
+        },
+        {
+            "mesh": "cloth5",
+            "material": "cloth"
+        },
+        {
+            "mesh": "fire",
+            "material": "fire"
+        },
+        {
+            "mesh": "hair",
+            "material": "hair"
+        },
+        {
+            "mesh": "skin",
+            "material": "skin"
+        }
+    ]
+}
